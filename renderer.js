@@ -4,6 +4,7 @@ const modeLabel = document.getElementById('mode-label');
 const timerDisplay = document.getElementById('timer-display');
 const actionBtn = document.getElementById('action-btn');
 const pauseBtn = document.getElementById('pause-btn');
+const skipBtn = document.getElementById('skip-btn');
 const minimizeBtn = document.getElementById('minimize-btn');
 const closeBtn = document.getElementById('close-btn');
 
@@ -93,17 +94,20 @@ function updateUI() {
     actionBtn.textContent = 'Start';
     actionBtn.style.display = 'inline-block';
     pauseBtn.style.display = 'none';
+    skipBtn.style.display = 'none';
   } else if (state === 'focus') {
     modeLabel.textContent = 'SESJA SKUPIENIA';
     timerDisplay.textContent = formatTime(getFocusElapsedSeconds());
     actionBtn.textContent = 'Przejdź do przerwy';
     actionBtn.style.display = 'inline-block';
     pauseBtn.style.display = 'inline-flex';
+    skipBtn.style.display = 'none';
   } else if (state === 'break') {
     modeLabel.textContent = 'PRZERWA';
     timerDisplay.textContent = formatTime(Math.max(0, Math.ceil(breakTotalMs / 1000)));
     actionBtn.style.display = 'none';
     pauseBtn.style.display = 'none';
+    skipBtn.style.display = 'inline-block';
   }
 }
 
@@ -171,7 +175,7 @@ function startBreak() {
 
   const focusSeconds = getFocusElapsedSeconds();
 
-  // Oblicz czas przerwy: czas skupienia / 5, zaokrąglone w dół do pełnych minut
+  // Oblicz czas przerwy: czas skupienia / 4, zaokrąglone w dół do pełnych minut
   const breakMinutes = Math.floor(focusSeconds / 4 / 60);
   let breakMs = breakMinutes * 60 * 1000;
 
@@ -189,6 +193,17 @@ function startBreak() {
   startFocusTimer();
 }
 
+function skipBreak() {
+  stopTimer();
+  state = 'idle';
+  focusTotalMs = 0;
+  focusStartTime = null;
+  breakEndTime = null;
+  breakTotalMs = 0;
+  isPaused = false;
+  updateUI();
+}
+
 actionBtn.addEventListener('click', () => {
   if (state === 'idle') {
     startFocus();
@@ -198,6 +213,7 @@ actionBtn.addEventListener('click', () => {
 });
 
 pauseBtn.addEventListener('click', togglePause);
+skipBtn.addEventListener('click', skipBreak);
 
 // Zablokuj kontekstowe menu
 document.addEventListener('contextmenu', (e) => e.preventDefault());

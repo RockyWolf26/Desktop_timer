@@ -148,3 +148,27 @@ body {
 #pause-btn:active {
   transform: scale(0.97);
 }
+
+#skip-btn {
+  background: none;
+  border: 1px solid #555555;
+  color: #cc7777;
+  padding: 8px 12px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  -webkit-app-region: no-drag;
+}
+
+#skip-btn:hover {
+  background-color: #3a3a3a;
+  border-color: #cc7777;
+  color: #ffffff;
+}
+
+#skip-btn:active {
+  transform: scale(0.97);
+}
