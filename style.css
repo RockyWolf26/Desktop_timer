@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #2a2a2a;
+  color: #e0e0e0;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  user-select: none;
+}
+
+#title-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 28px;
+  background-color: #222222;
+  -webkit-app-region: drag;
+  padding: 0 4px 0 10px;
+  flex-shrink: 0;
+}
+
+#title-text {
+  font-size: 11px;
+  color: #999999;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+#title-controls {
+  display: flex;
+  -webkit-app-region: no-drag;
+}
+
+.title-btn {
+  background: none;
+  border: none;
+  color: #888888;
+  width: 24px;
+  height: 24px;
+  font-size: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  transition: all 0.15s ease;
+}
+
+.title-btn:hover {
+  background-color: #3a3a3a;
+  color: #ffffff;
+}
+
+#close-btn:hover {
+  background-color: #c0392b;
+  color: #ffffff;
+}
+
+#app {
+  text-align: center;
+  padding: 18px 20px 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  -webkit-app-region: no-drag;
+}
+
+#mode-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #88aa88;
+  margin-bottom: 10px;
+}
+
+#timer-display {
+  font-size: 58px;
+  font-weight: 300;
+  font-family: 'Consolas', 'Courier New', monospace;
+  letter-spacing: 4px;
+  color: #ffffff;
+  margin-bottom: 18px;
+  line-height: 1;
+}
+
+#btn-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  -webkit-app-region: no-drag;
+}
+
+#action-btn {
+  background: none;
+  border: 1px solid #555555;
+  color: #aaddaa;
+  padding: 8px 24px;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  -webkit-app-region: no-drag;
+}
+
+#action-btn:hover {
+  background-color: #3a3a3a;
+  border-color: #77aa77;
+  color: #ffffff;
+}
+
+#action-btn:active {
+  transform: scale(0.97);
+}
+
+#pause-btn {
+  background: none;
+  border: 1px solid #555555;
+  color: #aaddaa;
+  width: 36px;
+  height: 36px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-app-region: no-drag;
+}
+
+#pause-btn:hover {
+  background-color: #3a3a3a;
+  border-color: #77aa77;
+  color: #ffffff;
+}
+
+#pause-btn:active {
+  transform: scale(0.97);
+}

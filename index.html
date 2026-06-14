@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="title-bar">
+    <span id="title-text">Timer</span>
+    <div id="title-controls">
+      <button id="minimize-btn" class="title-btn">─</button>
+      <button id="close-btn" class="title-btn">✕</button>
+    </div>
+  </div>
+  <div id="app">
+    <div id="mode-label">GOTOWY</div>
+    <div id="timer-display">00:00</div>
+    <div id="btn-row">
+      <button id="action-btn">Start</button>
+      <button id="pause-btn" style="display:none;">⏸</button>
+    </div>
+  </div>
+  <script src="renderer.js"></script>
+</body>
+</html>

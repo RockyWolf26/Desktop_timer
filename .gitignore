@@ -1,0 +1,19 @@
+# Zależności
+node_modules/
+
+# Artefakty builda (oprócz releases z gotowym instalatorem)
+dist/
+win-unpacked/
+desktop-timer-win32-x64/
+
+# Logi
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# System
+Thumbs.db
+.DS_Store
