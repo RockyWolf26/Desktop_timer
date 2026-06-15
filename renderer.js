@@ -147,7 +147,7 @@ function startFocus() {
   isPaused = false;
   focusTotalMs = 0;
   focusStartTime = Date.now();
-  pauseBtn.textContent = '⏸';
+  pauseBtn.textContent = '❚❚';
   stopTimer();
   updateUI();
   startFocusTimer();
@@ -166,7 +166,7 @@ function togglePause() {
     // Wznów – ustaw nowy start
     focusStartTime = Date.now();
     isPaused = false;
-    pauseBtn.textContent = '⏸';
+    pauseBtn.textContent = '❚❚';
   }
 }
 
